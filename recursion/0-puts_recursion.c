@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * _puts_recursion - prints a string followed by a new line
@@ -9,9 +9,9 @@ void _puts_recursion(char *s)
 {
 	if (*s == '\0')
 	{
-		printf("\n");
+		write(1, "\n", 1);
 		return;
 	}
-	printf("%c", *s);
+	write(1, s, 1);
 	_puts_recursion(s + 1);
 }
